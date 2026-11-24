@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>muhammad thoriq habib | Our Menu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f3e6d4;
+    color: #254b48;
+}
+
+/* NAVBAR */
+header {
+    height: 75px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f3e6d4;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: 800;
+    color: #236b70;
+    line-height: 1;
+}
+
+.logo small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #254b48;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 30px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #ed873c;
+}
+
+nav .order {
+    background: #ed873c;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 30px;
+}
+
+/* HERO */
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    height: 390px;
+    gap: 5px;
+}
+
+.hero-left {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+    background: #f6bd49;
+}
+
+.hero-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-left img:first-child {
+    grid-column: span 2;
+}
+
+.hero-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TITLE */
+.menu-heading {
+    text-align: center;
+    padding: 85px 20px 45px;
+}
+
+.menu-heading span {
+    color: #ed873c;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.menu-heading h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: #236b70;
+    margin: 15px 0;
+}
+
+.menu-heading p {
+    color: #7d8074;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* CATEGORY */
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 10px 20px 40px;
+}
+
+.categories button {
+    padding: 12px 25px;
+    border: 1px solid #236b70;
+    background: transparent;
+    color: #236b70;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.categories button:hover,
+.categories button.active {
+    background: #236b70;
+    color: white;
+}
+
+/* MENU */
+.menu-container {
+    padding: 0 8% 100px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.menu-card {
+    background: #fffaf2;
+    overflow: hidden;
+    transition: .35s;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px #00000015;
+}
+
+.menu-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+
+.menu-info {
+    padding: 23px;
+}
+
+.menu-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #236b70;
+}
+
+.menu-info p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #82857c;
+    min-height: 48px;
+}
+
+.menu-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.price {
+    font-size: 16px;
+    color: #ed873c;
+    font-weight: 700;
+}
+
+.menu-bottom button {
+    background: #236b70;
+    color: white;
+    border: none;
+    padding: 10px 17px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.menu-bottom button:hover {
+    background: #ed873c;
+}
+
+/* BANNER */
+.banner {
+    margin: 0 8% 90px;
+    background: #e7b94e;
+    padding: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #254b48;
+}
+
+.banner p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #465d51;
+}
+
+.banner span {
+    font-size: 55px;
+}
+
+/* FOOTER */
+footer {
+    background: #214a46;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+footer h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    color: #f6bd49;
+}
+
+footer p {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #d6e0d8;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    header {
+        padding: 0 5%;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 10px;
+    }
+
+    nav a:not(.order) {
+        display: none;
+    }
+
+    .hero {
+        height: 280px;
+        grid-template-columns: 1fr;
+    }
+
+    .hero-right {
+        display: none;
+    }
+
+    .menu-heading h1 {
+        font-size: 36px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu-container {
+        padding: 0 5% 70px;
+    }
+
+    .banner {
+        margin: 0 5% 60px;
+        padding: 30px;
+    }
+}
+
+@media(max-width: 500px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-card img {
+        height: 250px;
+    }
+
+    .banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .banner h2 {
+        font-size: 26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <div class="logo">
+        <small>muhammad thoriq habib</small>
+        CATERING
+    </div>
+
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#menu">OUR MENU</a>
+        <a href="#footer">CONTACT</a>
+        <a href="#menu" class="order">ORDER NOW</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-left">
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1000" alt="Food">
+        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800" alt="Salad">
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800" alt="Healthy food">
+    </div>
+
+    <div class="hero-right">
+        <img src="https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=1000" alt="Catering">
+    </div>
+</section>
+
+<!-- HEADING -->
+<section class="menu-heading" id="menu">
+    <span>DELICIOUS & FRESH</span>
+    <h1>Fresh Flavours. Creative Catering.</h1>
+    <p>
+        Discover our delicious selection of food, prepared with love
+        <br>and made for your special moments.
+    </p>
+</section>
+
+<!-- CATEGORY -->
+<div class="categories">
+    <button class="active" onclick="filterMenu('all', this)">All Menu</button>
+    <button onclick="filterMenu('main', this)">Main Course</button>
+    <button onclick="filterMenu('snack', this)">Snacks</button>
+    <button onclick="filterMenu('dessert', this)">Dessert</button>
+    <button onclick="filterMenu('drink', this)">Drinks</button>
+</div>
+
+<!-- MENU CARDS -->
+<section class="menu-container">
+    <div class="menu-grid">
+
+        <div class="menu-card" data-category="main">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800" alt="Nasi">
+            <div class="menu-info">
+                <h3>Special Rice Bowl</h3>
+                <p>Nasi spesial dengan lauk pilihan dan bumbu khas.</p>
+                <div class="menu-bottom">
+                    <span class="price">Rp35.000</span>
+                    <button onclick="orderMenu('Special Rice Bowl')">Order +</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="main">
+            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800" alt="Salad">
+            <div class="menu-info">
+                <h3>Fresh Garden Salad</h3>
+                <p>Salad sayuran segar dengan dressing spesial.</p>
+                <div class="menu-bottom">
+                    <span class="price">Rp30.000</span>
+                    <button onclick="orderMenu('Fresh Garden Salad')">Order +</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="main">
+            <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=800" alt="Pasta">
+            <div class="menu-info">
+                <h3>Signature Pasta</h3>
+                <p>Pasta lezat dengan saus creamy dan topping pilihan.</p>
+                <div class="menu-bottom">
+                    <span class="price">Rp45.000</span>
+                    <button onclick="orderMenu('Signature Pasta')">Order +</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="snack">
+            <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=800" alt="Fries">
+            <div class="menu-info">
+                <h3>Crispy French Fries</h3>
+                <p>Kentang goreng renyah dengan saus pilihan.</p>
+                <div class="menu-bottom">
+                    <span class="price">Rp20.000</span>
+                    <button onclick="orderMenu('Crispy French Fries')">Order +</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="snack">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800" alt="Pizza">
+            <div class="menu-info">
+                <h3>Mini Special Pizza</h3>
+                <p>Pizza mini dengan topping keju dan sayuran.</p>
+                <div class="menu-bottom">
+                    <span class="price">Rp28.000</span>
+                    <button onclick="orderMenu('Mini Special Pizza')">Order +</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="snack">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800" alt="Cake">
+            <div class="menu-info">
+                <h3>Sweet Mini Cake</h3>
+                <p>Kue lembut dengan rasa manis yang istimewa.</p>
+                <div class="menu-bottom">
+                    <span class="price">Rp25.000</span>
+                    <button onclick="orderMenu('Sweet Mini Cake')">Order +</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="dessert">
+            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800" alt="Dessert">
+            <div class="menu-info">
+                <h3>Sweet Dessert</h3>
+                <p>Dessert lembut dengan rasa manis dan segar.</p>
+                <div class="menu-bottom">
+                    <span class="price">Rp22.000</span>
+                    <button onclick="orderMenu('Sweet Dessert')">Order +</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="dessert">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800" alt="Chocolate cake">
+            <div class="menu-info">
+                <h3>Chocolate Cake</h3>
+                <p>Kue cokelat dengan tekstur lembut dan creamy.</p>
+                <div class="menu-bottom">
+                    <span class="price">Rp27.000</span>
+                    <button onclick="orderMenu('Chocolate Cake')">Order +</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="drink">
+            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800" alt="Coffee">
+            <div class="menu-info">
+                <h3>Ice Coffee Latte</h3>
+                <p>Minuman kopi susu dingin dengan rasa creamy.</p>
+                <div class="menu-bottom">
+                    <span class="price">Rp18.000</span>
+                    <button onclick="orderMenu('Ice Coffee Latte')">Order +</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- BANNER -->
+<section class="banner">
+    <div>
+        <h2>Good Food, Good Mood!</h2>
+        <p>Make every occasion special with INA TASYA F CATERING.</p>
+    </div>
+    <span>✳</span>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+    <h2>INA TASYA F CATERING</h2>
+    <p>Fresh Flavours. Creative Catering.</p>
+    <p>© 2026 INA TASYA F CATERING. All Rights Reserved.</p>
+</footer>
+
+<script>
+// FILTER MENU
+function filterMenu(category, button) {
+    const cards = document.querySelectorAll('.menu-card');
+    const buttons = document.querySelectorAll('.categories button');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// ORDER MENU
+function orderMenu(menu) {
+    alert("Anda memilih menu: " + menu +
+          "\nSilakan hubungi admin untuk pemesanan.");
+}
+</script>
+
+</body>
+</html>
